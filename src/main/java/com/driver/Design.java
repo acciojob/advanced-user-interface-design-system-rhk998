@@ -22,7 +22,8 @@ public class Design {
     }
 
     public void setRating(double rating) {
-    	//your code goes here
+
+        this.rating = rating;
     }
 
     public double getRating() {
@@ -31,20 +32,31 @@ public class Design {
     }
 
     public String getKey() {
-    	//your code goes here
         return name + "_" + category + "_" + designerUsername;
     }
 
     public void displayDesignDetails() {
-    	//your code goes here
+        System.out.println("Primary Key: " + getKey());
+        System.out.println("Design Rating: " + rating);
     }
 
     public double performMathOperation() {
-    	//your code goes here
         return 2 * rating;
     }
 
     public static void main(String[] args) {
     	//your code goes here
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Enter design name: ");
+        String name = scanner.next();
+        System.out.println("Enter design category: ");
+        String category = scanner.next();
+        System.out.println("Enter designer's username: ");
+        String designer = scanner.next();
+        System.out.println("Enter design rating: ");
+        Double rating = scanner.nextDouble();
+
+        createDesignFromUserInput(name,category,designer,rating);
     }
 }
